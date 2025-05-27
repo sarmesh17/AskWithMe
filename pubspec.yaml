@@ -39,6 +39,9 @@ dependencies:
   freezed_annotation: ^2.4.1
   json_annotation: ^4.9.0
   analyzer: 7.3.0
+  dio: ^5.8.0+1
+  logger: ^2.5.0
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +58,11 @@ dev_dependencies:
   freezed: ^2.4.1
   json_serializable: ^6.9.5
 
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/robot_assistant.png" # <- Your logo path
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -67,8 +75,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+     - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -96,4 +104,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+ 
+ 
 
