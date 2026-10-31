@@ -1,16 +1,46 @@
-# ask_with_me
+# AskWithMe
 
-A new Flutter project.
+A clean AI chat app built with Flutter. Ask anything and get answers from a GPT-4o chat model, in a familiar chat interface.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Chat-style conversation with user and assistant message bubbles
+- Loading state while the model is answering, and auto-scroll to the latest message
+- Errors are shown in the chat when a request fails
 
-A few resources to get you started if this is your first Flutter project:
+## Tech stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Area | Choice |
+| --- | --- |
+| Framework | Flutter |
+| State management | Riverpod (`riverpod_annotation` + code generation) |
+| Networking | Dio |
+| Models | Freezed + json_serializable |
+| Logging | logger |
+| AI | GPT-4o via AIMLAPI chat completions |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project structure
+
+```
+lib/
+├── main.dart
+├── model/          # Freezed chat completion models
+├── presentation/   # Chat screen UI
+├── providers/      # Riverpod providers
+├── repository/     # API calls (Dio)
+└── utils/          # Colors
+```
+
+## Run locally
+
+1. Clone and install:
+   ```bash
+   git clone https://github.com/sarmesh17/AskWithMe.git
+   cd AskWithMe
+   flutter pub get
+   ```
+2. Get an API key from [aimlapi.com](https://aimlapi.com).
+3. Run the app with your key. The key is passed at build time and is never stored in the code:
+   ```bash
+   flutter run --dart-define=AIML_API_KEY=your_key
+   ```
